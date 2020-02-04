@@ -1,0 +1,22 @@
+pipeline {
+   agent any
+   stages {
+      stage('Build') {
+         steps {
+            // Get some code from a GitHub repository
+            git "https://github.com/JayachandraRedd/Kalyanam-UI.git"
+            sh "npm install"
+            sh "ng build"
+         }
+
+      }
+     
+      stage('Deploy') {
+         steps {
+            sh "cp -rf $WORKSPACE/dist/matrimony  /opt/apache-tomcat-9.0.30/webapps/"
+         }
+
+      }
+         
+   }
+}
