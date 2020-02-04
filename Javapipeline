@@ -22,7 +22,7 @@ pipeline {
           }
                 stage ('Deploy') {
                                 steps {
-                                                sh '/opt/apache-maven-3.6.3/bin/mvn clean deploy '
+                                                sh '/opt/apache-maven-3.6.3/bin/mvn clean deploy'
                                 }
                 }
                 stage ('Release') {
@@ -31,5 +31,4 @@ pipeline {
                                 }
                 }
 }
-
 }
